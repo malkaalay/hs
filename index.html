@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <link rel="icon" type="image/png" href="./images/fear-artwork.jpeg">
-  <link rel="apple-touch-icon" href="./images/fear-artwork.jpeg">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hicats Sam | HS</title>
+
+  <title>HICATS SAM | HS</title>
+
+  <link rel="icon" type="image/png" href="./images/sam-front.png">
+  <link rel="apple-touch-icon" href="./images/sam-front.png">
+
+  <meta name="theme-color" content="#030303">
+  <meta name="description" content="Official artist page of Hicats Sam — dark cinematic rap artist from Gaza.">
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
@@ -23,7 +27,7 @@
       min-height:100vh;
       font-family:Inter,Arial,Helvetica,sans-serif;
       color:var(--text);
-      background:radial-gradient(circle at top,#151515 0%,#050505 38%,#000 100%);
+      background:radial-gradient(circle at top,#171717 0%,#050505 38%,#000 100%);
       overflow-x:hidden;
     }
 
@@ -34,14 +38,11 @@
       pointer-events:none;
       background:
         linear-gradient(to bottom,rgba(255,255,255,.025),transparent 28%),
-        radial-gradient(circle at center,transparent 0%,rgba(0,0,0,.72) 82%);
+        radial-gradient(circle at center,transparent 0%,rgba(0,0,0,.76) 82%);
       z-index:-1;
     }
 
-    .page{
-      min-height:100vh;
-      padding-bottom:58px;
-    }
+    .page{min-height:100vh;padding-bottom:58px}
 
     .header{
       width:100%;
@@ -49,42 +50,28 @@
       align-items:center;
       justify-content:space-between;
       padding:22px 44px;
-      background:rgba(0,0,0,.58);
+      background:rgba(0,0,0,.6);
       border-bottom:1px solid var(--line);
       backdrop-filter:blur(14px);
+      position:sticky;
+      top:0;
+      z-index:50;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
+    .brand{display:flex;align-items:center;gap:14px}
 
-    .logo{
+    .logo-img{
       width:52px;
       height:52px;
-      display:grid;
-      place-items:center;
+      object-fit:cover;
       border-radius:16px;
-      background:linear-gradient(145deg,#151515,#060606);
       border:1px solid var(--line);
-      font-weight:900;
-      letter-spacing:-1px;
       box-shadow:0 18px 45px rgba(0,0,0,.52);
+      filter:brightness(.85) contrast(1.08);
     }
 
-    .brand h3{
-      font-size:19px;
-      font-weight:900;
-      letter-spacing:1.4px;
-    }
-
-    .brand small{
-      display:block;
-      margin-top:3px;
-      color:var(--muted);
-      letter-spacing:.3px;
-    }
+    .brand h3{font-size:19px;font-weight:900;letter-spacing:1.4px}
+    .brand small{display:block;margin-top:3px;color:var(--muted);letter-spacing:.3px}
 
     .share-btn{
       padding:11px 18px;
@@ -105,114 +92,297 @@
     }
 
     .content{
-      width:min(860px,92%);
-      margin:96px auto 0;
+      width:min(1080px,92%);
+      margin:76px auto 0;
       display:flex;
       flex-direction:column;
-      align-items:center;
-      gap:18px;
+      gap:24px;
     }
 
-    .artist-card{
+    .hero-card{
       width:100%;
-      min-height:520px;
-      padding:34px 28px 44px;
-      display:flex;
-      flex-direction:column;
+      min-height:680px;
+      padding:42px 34px;
+      display:grid;
+      grid-template-columns:380px 1fr;
       align-items:center;
-      justify-content:center;
-      text-align:center;
-      background:linear-gradient(180deg,rgba(26,26,26,.92),rgba(8,8,8,.96));
+      gap:38px;
+      background:#050505;
       border:1px solid var(--line);
       border-radius:var(--radius);
-      box-shadow:0 36px 100px rgba(0,0,0,.78),inset 0 1px 0 rgba(255,255,255,.04);
+      box-shadow:0 38px 110px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.04);
       position:relative;
       overflow:hidden;
     }
 
-    .artist-card::before{
-      content:"HS";
+    .hero-bg-art{
       position:absolute;
-      top:20px;
-      left:50%;
-      transform:translateX(-50%);
-      font-size:clamp(92px,20vw,210px);
-      font-weight:950;
-      letter-spacing:-14px;
-      color:rgba(255,255,255,.025);
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      opacity:.25;
+      filter:brightness(.55) contrast(1.15) saturate(.72);
+      z-index:0;
+    }
+
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.58),rgba(0,0,0,.9)),
+        radial-gradient(circle at center,transparent 0%,rgba(0,0,0,.64) 74%);
+      z-index:1;
       pointer-events:none;
     }
 
-    .cover-wrap{
-      width:min(350px,78vw);
-      height:min(350px,78vw);
-      margin-top:20px;
-      padding:3px;
-      border-radius:26px;
-      background:#1b1b1b;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 28px 80px rgba(0,0,0,.82);
-      position:relative;
-      z-index:4;
+    .hero-card::before{
+      content:"HICATS";
+      position:absolute;
+      top:34px;
+      right:24px;
+      font-size:clamp(72px,12vw,160px);
+      font-weight:950;
+      letter-spacing:-8px;
+      color:rgba(255,255,255,.035);
+      pointer-events:none;
+      z-index:2;
     }
 
-    .cover{
+    .hero-card > *{
+      position:relative;
+      z-index:2;
+    }
+
+    .portrait-frame{
+      width:100%;
+      height:520px;
+      border-radius:32px;
+      overflow:hidden;
+      background:#080808;
+      border:1px solid rgba(255,255,255,.09);
+      box-shadow:0 35px 100px rgba(0,0,0,.85);
+    }
+
+    .portrait-frame img{
       width:100%;
       height:100%;
-      display:block;
       object-fit:cover;
-      border-radius:22px;
-      filter:brightness(.78) contrast(1.08) saturate(.9);
+      object-position:center;
+      display:block;
+      filter:brightness(.78) contrast(1.1) saturate(.86);
+    }
+
+    .portrait-frame::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(0,0,0,.5),transparent 55%);
+      pointer-events:none;
     }
 
     .label{
-      margin-top:30px;
       color:var(--muted);
       font-size:12px;
-      font-weight:800;
-      letter-spacing:2.4px;
+      font-weight:900;
+      letter-spacing:2.6px;
       text-transform:uppercase;
-      position:relative;
-      z-index:2;
+      margin-bottom:14px;
     }
 
-    .song-title{
-      margin-top:12px;
-      font-size:clamp(52px,9vw,88px);
-      line-height:.95;
+    .artist-title{
+      font-size:clamp(52px,8vw,92px);
+      line-height:.92;
       font-weight:950;
-      letter-spacing:5px;
-      position:relative;
-      z-index:2;
+      letter-spacing:3px;
+      margin-bottom:16px;
     }
 
     .artist-name{
-      margin-top:17px;
-      font-size:23px;
-      color:#d4d4d4;
-      position:relative;
-      z-index:2;
+      font-size:26px;
+      color:#d9d9d9;
+      margin-bottom:18px;
     }
 
     .artist-name span{
-      color:#5f5f5f;
+      color:#666;
       font-size:15px;
-      margin-left:7px;
+      margin-left:8px;
       letter-spacing:2px;
     }
 
+    .hero-description{
+      max-width:540px;
+      color:#c8c8c8;
+      line-height:1.85;
+      font-size:16px;
+      margin-bottom:22px;
+    }
+
     .release-status{
-      margin-top:24px;
-      padding:9px 14px;
+      display:inline-flex;
+      padding:10px 15px;
       border-radius:999px;
       background:rgba(255,255,255,.045);
       border:1px solid var(--line);
-      color:#bcbcbc;
+      color:#d0d0d0;
       font-size:13px;
-      font-weight:750;
-      position:relative;
-      z-index:2;
+      font-weight:850;
+      margin-bottom:24px;
     }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .main-btn,.ghost-btn{
+      min-height:52px;
+      padding:14px 22px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      font-weight:950;
+      transition:.25s ease;
+    }
+
+    .main-btn{background:#fff;color:#000;box-shadow:0 18px 44px rgba(255,255,255,.12)}
+    .main-btn:hover{transform:translateY(-2px) scale(1.02);background:#e7e7e7}
+
+    .ghost-btn{
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.045);
+    }
+
+    .ghost-btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.08)}
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .info-card{
+      padding:22px;
+      border-radius:22px;
+      background:linear-gradient(180deg,#121212,#070707);
+      border:1px solid var(--line);
+      box-shadow:0 18px 52px rgba(0,0,0,.48);
+    }
+
+    .info-card span{
+      display:block;
+      color:#777;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+
+    .info-card strong{font-size:17px;color:#f2f2f2}
+
+    .section-card{
+      width:100%;
+      padding:34px 30px;
+      background:
+        linear-gradient(180deg,rgba(20,20,20,.96),rgba(5,5,5,.98)),
+        radial-gradient(circle at top,rgba(255,255,255,.06),transparent 45%);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:24px;
+      box-shadow:0 30px 80px rgba(0,0,0,.72),inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    .section-kicker{
+      display:inline-flex;
+      padding:8px 13px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.045);
+      color:#bdbdbd;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+
+    .section-card h2{
+      font-size:clamp(30px,5vw,50px);
+      line-height:1.05;
+      letter-spacing:-1px;
+      margin-bottom:18px;
+    }
+
+    .story-split{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 440px;
+      gap:36px;
+      align-items:start;
+    }
+
+    .story-copy{max-width:680px}
+
+    .story-intro{
+      font-size:20px;
+      font-weight:900;
+      margin-bottom:16px;
+      color:#fff;
+      line-height:1.5;
+    }
+
+    .story-text p{
+      margin-bottom:15px;
+      line-height:1.9;
+      color:#cfcfcf;
+      font-size:16px;
+    }
+
+    .highlight-line{
+      color:#fff !important;
+      font-weight:850;
+      font-size:17px !important;
+      letter-spacing:.2px;
+    }
+
+    .story-image{
+      height:760px;
+      border-radius:34px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.1);
+      background:#050505;
+      box-shadow:0 34px 100px rgba(0,0,0,.82);
+      position:sticky;
+      top:110px;
+    }
+
+    .story-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      display:block;
+      filter:brightness(.84) contrast(1.12) saturate(.9);
+      transition:.6s ease;
+    }
+
+    .story-image::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to top,rgba(0,0,0,.62),transparent 45%),
+        radial-gradient(circle at center,transparent 45%,rgba(0,0,0,.36) 100%);
+      pointer-events:none;
+    }
+
+    .story-image:hover img{transform:scale(1.035)}
 
     .music-card{
       width:100%;
@@ -234,71 +404,37 @@
       font-weight:800;
     }
 
-    .music-head strong{
-      color:#f1f1f1;
-      letter-spacing:.4px;
-    }
+    .music-head strong{color:#f1f1f1;letter-spacing:.4px}
 
-  .bandcamp-frame-wrap{
-  width:100%;
-  max-width:650px;
-  margin:0 auto;
-  border-radius:22px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.08);
-  background:linear-gradient(180deg,#111,#050505);
-  box-shadow:0 24px 70px rgba(0,0,0,.65);
-  padding:14px;
-}
-
-.bandcamp-player{
-  display:block;
-  border:0;
-  width:100%;
-  height:120px;
-  border-radius:20px;
-  overflow:hidden;
-}
-
-    .support-box{
+    .bandcamp-frame-wrap{
       width:100%;
-      padding:34px 30px;
-      background:
-        linear-gradient(180deg,rgba(20,20,20,.96),rgba(5,5,5,.98)),
-        radial-gradient(circle at top,rgba(255,255,255,.08),transparent 45%);
-      border:1px solid rgba(255,255,255,.09);
-      border-radius:24px;
-      box-shadow:0 30px 80px rgba(0,0,0,.72),inset 0 1px 0 rgba(255,255,255,.04);
-      text-align:center;
+      max-width:650px;
+      margin:0 auto;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg,#111,#050505);
+      box-shadow:0 24px 70px rgba(0,0,0,.65);
+      padding:14px;
     }
 
-    .support-kicker{
-      display:inline-flex;
-      padding:8px 13px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.1);
-      background:rgba(255,255,255,.045);
-      color:#bdbdbd;
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:1.8px;
-      text-transform:uppercase;
-      margin-bottom:18px;
+    .bandcamp-player{
+      display:block;
+      border:0;
+      width:100%;
+      height:120px;
+      border-radius:20px;
+      overflow:hidden;
     }
 
-    .support-box h2{
-      font-size:clamp(28px,5vw,46px);
-      line-height:1.05;
-      letter-spacing:-1px;
-      margin-bottom:18px;
-    }
+    .support-box{text-align:center}
 
     .support-box p{
       color:#cfcfcf;
       font-size:16px;
-      line-height:1.75;
+      line-height:1.85;
       margin:0 auto 15px;
-      max-width:680px;
+      max-width:720px;
     }
 
     .support-box .strong-line{
@@ -308,15 +444,14 @@
     }
 
     .support-actions{
-      margin-top:26px;
+      margin-top:28px;
       display:flex;
       gap:12px;
       justify-content:center;
       flex-wrap:wrap;
     }
 
-    .support-btn,
-    .outline-btn{
+    .support-btn,.outline-btn{
       min-height:54px;
       padding:15px 24px;
       border-radius:999px;
@@ -335,10 +470,7 @@
       box-shadow:0 18px 44px rgba(255,255,255,.12);
     }
 
-    .support-btn:hover{
-      transform:translateY(-2px) scale(1.02);
-      background:#e7e7e7;
-    }
+    .support-btn:hover{transform:translateY(-2px) scale(1.02);background:#e7e7e7}
 
     .outline-btn{
       color:#fff;
@@ -346,10 +478,7 @@
       background:rgba(255,255,255,.045);
     }
 
-    .outline-btn:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,.08);
-    }
+    .outline-btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.08)}
 
     .music-link{
       width:100%;
@@ -378,14 +507,11 @@
 
     .music-link:hover{
       transform:translateY(-2px);
-      background:linear-gradient(180deg,#454646,#181818);
+      background:linear-gradient(180deg,#242424,#181818);
       box-shadow:0 22px 55px rgba(0,0,0,.56);
     }
 
-    .arrow{
-      color:#bdbdbd;
-      font-size:22px;
-    }
+    .arrow{color:#bdbdbd;font-size:22px}
 
     footer{
       margin-top:42px;
@@ -394,54 +520,43 @@
       font-size:13px;
     }
 
+    @media(max-width:900px){
+      .hero-card{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .portrait-frame{
+        max-width:400px;
+        margin:0 auto;
+      }
+
+      .hero-actions{justify-content:center}
+
+      .story-split{grid-template-columns:1fr}
+      .story-copy{max-width:100%}
+
+      .story-image{
+        position:relative;
+        top:auto;
+        height:680px;
+        order:-1;
+      }
+    }
+
     @media(max-width:640px){
-      .header{
-        padding:17px 18px;
-      }
-
-      .brand h3{
-        font-size:16px;
-      }
-
-      .logo{
-        width:44px;
-        height:44px;
-      }
-
-      .share-btn{
-        padding:10px 13px;
-        font-size:12px;
-      }
-
-      .content{
-        margin-top:60px;
-      }
-
-      .artist-card{
-        min-height:470px;
-        padding-bottom:34px;
-      }
-
-      .music-card{
-        padding:16px;
-      }
-
-      .bandcamp-player{
-        height:120px;
-      }
-
-      .support-box{
-        padding:28px 20px;
-      }
-
-      .support-box p{
-        font-size:15px;
-      }
-
-      .support-btn,
-      .outline-btn{
-        width:100%;
-      }
+      .header{padding:17px 18px}
+      .brand h3{font-size:16px}
+      .logo-img{width:44px;height:44px}
+      .share-btn{padding:10px 13px;font-size:12px}
+      .content{margin-top:54px;width:min(100% - 28px,980px)}
+      .hero-card{padding:28px 20px 34px;min-height:auto}
+      .portrait-frame{height:430px}
+      .info-grid{grid-template-columns:1fr}
+      .section-card{padding:24px 18px}
+      .story-text p{font-size:15px}
+      .story-image{height:560px;border-radius:26px}
+      .support-btn,.outline-btn,.main-btn,.ghost-btn{width:100%}
     }
   </style>
 </head>
@@ -450,10 +565,10 @@
   <main class="page">
     <header class="header">
       <div class="brand">
-        <div class="logo">HS</div>
+        <img class="logo-img" src="./images/artist.png" alt="Hicats Sam profile">
         <div>
           <h3>HICATS SAM</h3>
-          <small>Official release page</small>
+          <small>Official artist page</small>
         </div>
       </div>
 
@@ -461,24 +576,51 @@
     </header>
 
     <section class="content">
-      <div class="artist-card">
-        <div class="cover-wrap">
-          <img class="cover" src="./images/fear-artwork.jpeg" alt="FEAR artwork by Hicats Sam">
+      <section class="hero-card">
+        <img class="hero-bg-art" src="./images/hero-fear-bg.png" alt="">
+
+        <div class="portrait-frame">
+          <img src="./images/sam-front.png" alt="Hicats Sam cinematic portrait">
         </div>
 
-        <div class="label">Dark Cinematic Single</div>
-        <h1 class="song-title">FEAR</h1>
-        <div class="artist-name">Hicats Sam <span>HS</span></div>
-        <div class="release-status"> Music Video has already on the platforms</div>
-         <div class="support-actions">
-          <a class="support-btn" href="profile.html" target="_blank" rel="noopener">
-            More Info About Sam
-          </a>
+        <div class="hero-copy">
+          <div class="label">Dark Cinematic Rap Artist</div>
+          <h1 class="artist-title">HICATS SAM</h1>
+          <div class="artist-name">Hicats Sam <span>HS</span></div>
+
+          <p class="hero-description">
+            A rapper and songwriter from Gaza City, carrying a war story through dark cinematic rap, emotion, English lyrics, and visual storytelling.
+          </p>
+
+          <div class="release-status">Music Video Available on Platforms</div>
+
+          <div class="hero-actions">
+            <a class="main-btn" href="#support">Support The Journey</a>
+            <a class="ghost-btn" href="https://hsrealmusic.bandcamp.com/track/fear" target="_blank" rel="noopener">
+              Listen / Buy FEAR
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-grid">
+        <div class="info-card">
+          <span>Artist</span>
+          <strong>Hicats Sam / HS</strong>
         </div>
 
-      </div>
+        <div class="info-card">
+          <span>From</span>
+          <strong>Gaza City, Palestine</strong>
+        </div>
 
-      <div class="music-card">
+        <div class="info-card">
+          <span>Sound</span>
+          <strong>Dark Rap / Cinematic Storytelling</strong>
+        </div>
+      </section>
+
+      <section class="music-card">
         <div class="music-head">
           <strong>Listen / Support</strong>
           <span>Bandcamp official player</span>
@@ -486,58 +628,72 @@
 
         <div class="bandcamp-frame-wrap">
           <iframe
-  class="bandcamp-player"
-  src="https://bandcamp.com/EmbeddedPlayer/track=3218786859/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
-  seamless>
-  <a href="https://hsrealmusic.bandcamp.com/track/fear">FEAR By Hicats Sam</a>
-</iframe>
-
-
+            class="bandcamp-player"
+            src="https://bandcamp.com/EmbeddedPlayer/track=3218786859/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+            seamless>
+            <a href="https://hsrealmusic.bandcamp.com/track/fear">FEAR By Hicats Sam</a>
+          </iframe>
         </div>
-      </div>
+      </section>
 
-      <div class="support-box">
-        <div class="support-kicker">Support The Story</div>
+      <section class="section-card">
+        <div class="story-split">
+          <div class="story-copy">
+            <div class="section-kicker">Artist Story</div>
+            <h2>From Survival To Music</h2>
 
-        <h2>Let's Let The World Listen</h2>
+            <div class="story-intro">
+              <strong>My name is Sam, I’m 23 years old from Gaza City.</strong>
+            </div>
 
-        <p>
-          I’m not asking for support to grow a career only.
-          I’m asking for support to keep going.
-        </p>
+            <div class="story-text">
+              <p>I studied Software and Database at the University College of Applied Science, but my life changed completely at the beginning of the war in 2023.</p>
+              <p>The day my house was bombed, my entire family was under the rubble — my mother, my father, my brothers, and my cousins. In that moment, everything I had was gone. I lost my home, my laptop, and the small studio I was building to start my journey in music.</p>
+              <p>We were forced to leave and move to a school, thinking it was safe, but the bombs never stopped. One day, soldiers surrounded the school and started shooting, forcing us to flee again to the south. During that displacement, I saw things I will never forget — bodies on the ground and dogs eating them.</p>
+              <p class="highlight-line">That moment will stay with me forever.</p>
+              <p>We ended up living in tents. In the middle of fear and loss, I started writing music. I wrote tracks like “Homeless,” “Lost Mom,” and “Bad Story.” I kept listening to rap and teaching myself English because I wanted my story to reach beyond Gaza.</p>
+              <p>For years, I wasn’t living. I was just trying to survive each day while holding on to the idea that music could still be my future.</p>
+              <p>When I returned, there was no home left. My entire neighborhood was destroyed, and even now I live in a tent with my family.</p>
+              <p class="highlight-line">Life here is extremely hard, but I never stopped.</p>
+              <p>Along the way, I met people who believed in me. Qasam helped me record. Raji is building a rock band in Gaza. Billy from the UK helped me improve my flow. Garry from Ireland pushed me to grow. They became real support in a place where support is rare.</p>
+              <p>After everything, I released my first track, “FEAR” by NF. It took me five months, not because I wanted it to, but because creating music in Gaza is not easy. Still, I did everything I could to bring it to life.</p>
+              <p class="highlight-line">My cover of NF’s track “FEAR” is out now, and this is just the beginning.</p>
+              <p>If you feel something while listening, then you already understand. Your support doesn’t just help my music; it helps me keep going, survive, and continue telling this story to the world.</p>
+            </div>
+          </div>
 
-        <p>
-          I come from a place where continuing is not guaranteed, and music is the only way I can carry my story forward.
-        </p>
+          <div class="story-image">
+            <img src="./images/sam-side.png" alt="Hicats Sam cinematic side portrait">
+          </div>
+        </div>
+      </section>
 
-        <p>
-          Life in Gaza is so hard ,Your support can help me find a basic way to live, stay focused on music,and reach my music out , record more songs, and keep sharing what I’ve lived through in the war with the world.
-        </p>
+      <section class="section-card support-box" id="support">
+        <div class="section-kicker">Support The Story</div>
 
-        <p>
-          Every dollar matters more than you think, Even $1 can help me stay on this path and finish the music I still need to record and production my music.
-        </p>
+        <h2>Let The World Listen</h2>
 
-        <p class="strong-line">
-          If this track reached you, then you already understand.
-        </p>
+        <p>I’m not asking for support to grow a career only. I’m asking for support to keep going.</p>
+        <p>Life in Gaza is hard. Your support can help me find a basic way to live, stay focused on music, record more songs, and keep sharing what I’ve lived through with the world.</p>
+        <p>Every dollar matters more than you think. Even $10 can help me stay on this path and finish the music I still need to record and produce.</p>
+        <p class="strong-line">If this track reached you, then you already understand.</p>
 
         <div class="support-actions">
-          <a class="support-btn" href="https://gofund.me/1a159fada" target="_blank" rel="noopener">
-            Support / GoFundMe
+          <a class="support-btn" href="PAYPAL_LINK" target="_blank" rel="noopener">
+            Donate via PayPal
+          </a>
+
+          <a class="outline-btn" href="GOFUNDME_LINK" target="_blank" rel="noopener">
+            Support on GoFundMe
+          </a>
+
+          <a class="outline-btn" href="https://hsrealmusic.bandcamp.com/track/fear" target="_blank" rel="noopener">
+            Buy FEAR on Bandcamp
           </a>
         </div>
+      </section>
 
-       <div class="support-actions">
-            <a class="outline-btn" href="https://www.paypal.com/paypalme/sampal2003" target="_blank" rel="noopener">
-               Donate via PayPal
-             </a>
-        </div>
-      </div>
-
-
-  
-       <a class="music-link" href="https://www.instagram.com/hsrealmusic?igsh=cXA3dmszcm4ybGd4" target="_blank" rel="noopener">
+      <a class="music-link" href="https://www.instagram.com/hsrealmusic?igsh=cXA3dmszcm4ybGd4" target="_blank" rel="noopener">
         <span>Instagram <small>Follow the journey</small></span>
         <span class="arrow">→</span>
       </a>
@@ -546,7 +702,11 @@
         <span>TikTok <small>Watch new updates</small></span>
         <span class="arrow">→</span>
       </a>
-      
+
+      <a class="music-link" href="#" target="_blank" rel="noopener">
+        <span>YouTube <small>Watch The Music Video</small></span>
+        <span class="arrow">→</span>
+      </a>
 
       <a class="music-link" href="#">
         <span>Spotify <small>Coming soon</small></span>
@@ -557,18 +717,16 @@
         <span>Apple Music <small>Coming soon</small></span>
         <span class="arrow">→</span>
       </a>
-
-     
     </section>
 
-    <footer>© 2026 Hicats Sam / HS — FEAR</footer>
+    <footer>© 2026 Hicats Sam / HS</footer>
   </main>
 
   <script>
     async function sharePage() {
       const data = {
-        title: "FEAR - Hicats Sam",
-        text: "Listen to FEAR by Hicats Sam / HS",
+        title: "HICATS SAM | HS",
+        text: "Official artist page of Hicats Sam / HS",
         url: window.location.href
       };
 
