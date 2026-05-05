@@ -542,22 +542,53 @@
       .story-image{height:560px;border-radius:26px}
       .support-btn,.outline-btn,.main-btn,.ghost-btn{width:100%}
     }
+
+    .back-btn{
+  min-height:42px;
+  padding:10px 15px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.045);
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.4px;
+  transition:.25s ease;
+  white-space:nowrap;
+}
+
+.back-btn:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.09);
+}
+
+@media(max-width:640px){
+  .back-btn{
+    padding:9px 12px;
+    font-size:12px;
+  }
+}
   </style>
 </head>
 
 <body>
   <main class="page">
-    <header class="header">
-      <div class="brand">
-        <img class="logo-img" src="./images/artist.png" alt="Hicats Sam profile">
-        <div>
-          <h3>HICATS SAM</h3>
-          <small>Official artist page</small>
-        </div>
-      </div>
+   <header class="header">
+  <a class="back-btn" href="index.html" aria-label="Back to home">
+    ← Back
+  </a>
 
-      <button class="share-btn" onclick="sharePage()">SHARE</button>
-    </header>
+  <div class="brand">
+    <img class="logo-img" src="./images/artist.png" alt="Hicats Sam profile">
+    <div>
+      <h3>HICATS SAM</h3>
+      <small>Official artist page</small>
+    </div>
+  </div>
+
+  <button class="share-btn" onclick="sharePage()">SHARE</button>
+</header>
 
     <section class="content">
       <section class="hero-card">
