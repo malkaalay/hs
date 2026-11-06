@@ -6,11 +6,11 @@
 
   <title>Hicats Sam | HS Real Music — Official Artist Website</title>
 
-  <meta name="description" content="Official website of Hicats Sam (HS), a Palestinian rapper, songwriter and visual storyteller from Gaza City. Discover FEAR, AFTER FEAR, and upcoming collaborations.">
-  <meta name="keywords" content="Hicats Sam, HS Real Music, Palestinian rapper, Gaza artist, Palestinian songwriter, FEAR, AFTER FEAR, Homeless, Lost Mom, Bad Story, Can You Hold Me, cinematic rap">
+  <meta name="description" content="Hicats Sam (Loai Miqdad), Palestinian rapper and filmmaker from Gaza. Watch FEAR and discover STILL HUMAN, his first original cinematic rap album in development.">
+  <meta name="keywords" content="Hicats Sam, HS Real Music, Palestinian rapper, Gaza artist, Palestinian songwriter, FEAR, STILL HUMAN, Homeless, Lost Mom, Bad Story, Can You Hold Me, cinematic rap">
   <meta name="author" content="Hicats Sam">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#030303">
+  <meta name="theme-color" content="#06252c">
 
   <link rel="canonical" href="https://www.hsrealmusic.com/">
   <link rel="alternate" hreflang="en" href="https://www.hsrealmusic.com/">
@@ -32,7 +32,7 @@
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Hicats Sam | HS Real Music — Official Artist Website">
-  <meta property="og:description" content="Meet Hicats Sam, a rapper, songwriter and visual storyteller from Gaza City. Discover FEAR, AFTER FEAR, and the music that comes next.">
+  <meta property="og:description" content="Meet Hicats Sam, a rapper, songwriter and visual storyteller from Gaza City. Discover FEAR, STILL HUMAN, and the music that comes next.">
   <meta property="og:url" content="https://www.hsrealmusic.com/">
   <meta property="og:site_name" content="HS Real Music">
   <meta property="og:locale" content="en_US">
@@ -60,7 +60,7 @@
     "url": "https://www.hsrealmusic.com/",
     "image": "https://raw.githubusercontent.com/malkaalay/hs/main/images/hero-fear-bg.png",
     "genre": "Rap",
-    "description": "Hicats Sam, also known as HS, is a Palestinian rapper, songwriter and visual storyteller from Gaza City. His work includes FEAR and the original project AFTER FEAR.",
+    "description": "Hicats Sam, also known as HS, is a Palestinian rapper, songwriter and visual storyteller from Gaza City. His work includes FEAR and the original project STILL HUMAN.",
     "sameAs": [
       "https://www.instagram.com/hsrealmusic",
       "https://www.tiktok.com/@hsrealmusic",
@@ -428,7 +428,24 @@
       .social-grid{grid-template-columns:1fr}
       .project-grid{grid-template-columns:1fr}
     }
-  </style>
+  
+  /* FEAR / STILL HUMAN — midnight teal visual identity, Nov 2026 */
+  :root{--bg:#021318;--card:#071d22;--line:rgba(129,221,221,.16);--line-strong:rgba(129,221,221,.30);--text:#effafb;--muted:#9ab9bd;--soft:#c4dadd;--shadow:0 28px 85px rgba(0,5,8,.72)}
+  body{background:radial-gradient(ellipse at 50% 0%,#124851 0%,#041b21 38%,#01080b 100%)}
+  body::before{background:linear-gradient(180deg,rgba(14,86,94,.08),transparent 36%),radial-gradient(circle at center,transparent,rgba(0,7,10,.55) 87%)}
+  .header{background:rgba(1,16,21,.83);border-color:rgba(128,225,231,.14)}
+  .hero-full{background:#041c22}
+  .hero-img{filter:brightness(.64) contrast(1.12) saturate(.87);object-position:center 43%}
+  .hero-overlay{background:linear-gradient(180deg,rgba(0,30,36,.16),rgba(0,16,23,.20) 42%,rgba(0,7,11,.98) 98%),radial-gradient(ellipse at center,transparent 20%,rgba(0,7,11,.58) 82%)}
+  .label,.support-kicker,.section-kicker{color:#91d7da}
+  .support-btn,.main-btn{background:#9adfe2!important;color:#031a20!important}
+  .support-btn:hover,.main-btn:hover{background:#c0f3f2!important}
+  .outline-btn,.ghost-btn,.share-btn{border-color:rgba(117,214,220,.28)}
+  .artwork-showcase,.music-card,.support-box,.section-card,.project-card,.info-card,.music-link,.hero-card{background:linear-gradient(135deg,rgba(12,44,51,.96),rgba(3,15,20,.98));border-color:rgba(132,220,225,.16)}
+  .project-status,.release-status{border-color:rgba(146,218,221,.23);color:#b4dedf}
+  .music-link:hover{background:linear-gradient(135deg,#16464e,#071c22)}
+  @media(max-width:640px){.hero-img{object-position:50% 50%}}
+</style>
 </head>
 
 <body>
@@ -456,12 +473,12 @@
         <div class="label">Gaza City, Palestine</div>
         <h1 class="song-title">HICATS SAM</h1>
         <div class="artist-name">Rapper · Songwriter · Visual Storyteller <span>HS</span></div>
-        <p class="hero-copy">FEAR was just the beginning. This is where my story, original music and next projects continue.</p>
+        <p class="hero-copy">From FEAR to STILL HUMAN — my first original cinematic rap album, blending emotional English rap, epic sound and stories of loss, survival and remaining human.</p>
 
         <div class="support-actions">
           <a class="support-btn" href="#track">Listen to FEAR</a>
           <a class="outline-btn" href="profile.html">My Story</a>
-          <a class="outline-btn" href="#after-fear">AFTER FEAR</a>
+          <a class="outline-btn" href="#still-human">STILL HUMAN</a>
         </div>
 
         <a class="scroll-btn" href="#track">Explore the music</a>
@@ -502,10 +519,10 @@
         </div>
       </section>
 
-      <section class="support-box project-section" id="after-fear" aria-label="AFTER FEAR original project">
+      <section class="support-box project-section" id="still-human" aria-label="STILL HUMAN original project">
         <div class="support-kicker">Next Chapter</div>
-        <h2>AFTER FEAR</h2>
-        <p>FEAR introduced one part of my story, but it was a cover. AFTER FEAR is the next step: my original songs, my writing, and experiences that came directly from what I lived through in Gaza.</p>
+        <h2>STILL HUMAN</h2><p><strong>My first original cinematic rap album is in development, combining English rap, orchestral production and visual storytelling. It has not been released yet.</strong></p>
+        <p>FEAR introduced one part of my story, but it was a cover. STILL HUMAN is the next step: my original songs, my writing, and experiences that came directly from what I lived through in Gaza.</p>
 
         <div class="project-grid">
           <article class="project-card">
@@ -528,7 +545,7 @@
 
           <article class="project-card">
             <h3>Can You Hold Me</h3>
-            <p>Another emotional side of AFTER FEAR, including a collaboration with Rita Mousi.</p>
+            <p>Another emotional side of STILL HUMAN, including a collaboration with Rita Mousi.</p>
             <span class="project-status">In development</span>
           </article>
         </div>
@@ -541,12 +558,14 @@
         <span class="project-status">Cover · Collaboration · In production</span>
       </section>
 
+      <section class="support-box project-section" id="current-chapter"><div class="support-kicker">My story today · November 2026</div><h2>Still here. Still making music.</h2><p>My name is Loai Miqdad, and I create as Hicats Sam, a rapper, songwriter and filmmaker from Gaza City. My family home was destroyed. After repeated displacement, we now live in a tent. I lost my close friend Qism, the person who opened his studio to me and helped me record and produce without charging me. Losing him meant losing a friend and a place where my music could take shape.</p><p>I also lost my laptop and sometimes walk about an hour to reach power and an internet connection. I made FEAR over eight months under these conditions: a music film about memories of war that refuse to leave. Now I am developing STILL HUMAN, my first original cinematic rap album, and seeking producers, creative collaborators and the resources to finish recording it.</p><p>I want to be seen as an artist, not only as someone living through a war. If you cannot donate, sharing my work or connecting me with musicians and producers matters too.</p><div class="support-actions"><a class="outline-btn" href="https://linktr.ee/hsrealmusic" target="_blank" rel="noopener noreferrer">All My Official Links</a><a class="outline-btn" href="https://www.youtube.com/watch?v=bjHydvlQQec" target="_blank" rel="noopener noreferrer">Watch FEAR Film</a></div></section>
+
       <section class="support-box" aria-label="Support the next record" id="support" data-nosnippet>
         <div class="support-kicker" data-nosnippet>Support The Next Record</div>
         <h2>I Have the Songs. The Challenge Is Producing Them.</h2>
 
         <p>After losing Qism, I also lost the friend and producer who helped me record and produce music without charging me. That made finishing new music much harder financially.</p>
-        <p>Your support helps me move AFTER FEAR and future projects from writing and demos into full production: recording, arrangement, mixing, mastering, artwork and distribution.</p>
+        <p>Your support helps me move STILL HUMAN and future projects from writing and demos into full production: recording, arrangement, mixing, mastering, artwork and distribution.</p>
         <p class="strong-line">The ideas are already here. Your support helps me make them real.</p>
         <p>If donating is not possible, sharing the music and the project is still real support.</p>
 
@@ -587,7 +606,7 @@
     async function sharePage() {
       const data = {
         title: "Hicats Sam / HS",
-        text: "Discover Hicats Sam, FEAR, AFTER FEAR and the music that comes next.",
+        text: "Discover Hicats Sam, FEAR, STILL HUMAN and the music that comes next.",
         url: window.location.href
       };
 

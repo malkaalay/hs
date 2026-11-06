@@ -6,11 +6,11 @@
 
   <title>Hicats Sam | HS Real Music — Official Artist Website</title>
 
-  <meta name="description" content="The story of Hicats Sam (HS), a Palestinian rapper, songwriter and visual storyteller from Gaza City: from software development to FEAR, AFTER FEAR and original music.">
+  <meta name="description" content="Hicats Sam (Loai Miqdad), Palestinian rapper and filmmaker from Gaza. Watch FEAR and discover STILL HUMAN, his first original cinematic rap album in development.">
   <meta name="keywords" content="Hicats Sam, HS, HS Real Music, HSREALMUSIC, FEAR, Gaza rapper, Palestinian artist, rap, music from Gaza">
   <meta name="author" content="Hicats Sam">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#030303">
+  <meta name="theme-color" content="#06252c">
 
   <link rel="canonical" href="https://www.hsrealmusic.com/profile.html">
   <link rel="alternate" hreflang="en" href="https://www.hsrealmusic.com/profile.html">
@@ -27,7 +27,7 @@
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Hicats Sam | HS Real Music — Official Artist Website">
-  <meta property="og:description" content="Read the story of Hicats Sam: Gaza City, music, FEAR, the people who helped him grow, and the original project AFTER FEAR.">
+  <meta property="og:description" content="Read the story of Hicats Sam: Gaza City, music, FEAR, the people who helped him grow, and the original project STILL HUMAN.">
   <meta property="og:image" content="https://raw.githubusercontent.com/malkaalay/hs/main/images/fear-artwork.jpeg">
   <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/malkaalay/hs/main/images/fear-artwork.jpeg">
   <meta property="og:image:type" content="image/jpeg">
@@ -52,7 +52,7 @@
   "url": "https://www.hsrealmusic.com/profile.html",
   "image": "https://raw.githubusercontent.com/malkaalay/hs/main/images/artist.png",
   "genre": ["Cinematic Rap", "Dark Rap", "Hip Hop"],
-  "description": "Hicats Sam, also known as HS, is a Palestinian rapper, songwriter and visual storyteller from Gaza City. His work includes FEAR and the original project AFTER FEAR.",
+  "description": "Hicats Sam, also known as HS, is a Palestinian rapper, songwriter and visual storyteller from Gaza City. His work includes FEAR and the original project STILL HUMAN.",
   "sameAs": [
     "https://www.instagram.com/hsrealmusic",
     "https://www.tiktok.com/@hsrealmusic",
@@ -384,6 +384,15 @@
       letter-spacing:.2px;
     }
 
+    .story-subhead{
+      margin:30px 0 12px;
+      color:#fff;
+      font-size:14px;
+      font-weight:950;
+      letter-spacing:1.6px;
+      text-transform:uppercase;
+    }
+
     .story-image{
       height:760px;
       border-radius:34px;
@@ -623,7 +632,24 @@
     font-size:12px;
   }
 }
-  </style>
+  
+  /* FEAR / STILL HUMAN — midnight teal visual identity, Nov 2026 */
+  :root{--bg:#021318;--card:#071d22;--line:rgba(129,221,221,.16);--line-strong:rgba(129,221,221,.30);--text:#effafb;--muted:#9ab9bd;--soft:#c4dadd;--shadow:0 28px 85px rgba(0,5,8,.72)}
+  body{background:radial-gradient(ellipse at 50% 0%,#124851 0%,#041b21 38%,#01080b 100%)}
+  body::before{background:linear-gradient(180deg,rgba(14,86,94,.08),transparent 36%),radial-gradient(circle at center,transparent,rgba(0,7,10,.55) 87%)}
+  .header{background:rgba(1,16,21,.83);border-color:rgba(128,225,231,.14)}
+  .hero-full{background:#041c22}
+  .hero-img{filter:brightness(.64) contrast(1.12) saturate(.87);object-position:center 43%}
+  .hero-overlay{background:linear-gradient(180deg,rgba(0,30,36,.16),rgba(0,16,23,.20) 42%,rgba(0,7,11,.98) 98%),radial-gradient(ellipse at center,transparent 20%,rgba(0,7,11,.58) 82%)}
+  .label,.support-kicker,.section-kicker{color:#91d7da}
+  .support-btn,.main-btn{background:#9adfe2!important;color:#031a20!important}
+  .support-btn:hover,.main-btn:hover{background:#c0f3f2!important}
+  .outline-btn,.ghost-btn,.share-btn{border-color:rgba(117,214,220,.28)}
+  .artwork-showcase,.music-card,.support-box,.section-card,.project-card,.info-card,.music-link,.hero-card{background:linear-gradient(135deg,rgba(12,44,51,.96),rgba(3,15,20,.98));border-color:rgba(132,220,225,.16)}
+  .project-status,.release-status{border-color:rgba(146,218,221,.23);color:#b4dedf}
+  .music-link:hover{background:linear-gradient(135deg,#16464e,#071c22)}
+  @media(max-width:640px){.hero-img{object-position:50% 50%}}
+</style>
 </head>
 
 <body>
@@ -730,45 +756,66 @@
             <h2>From Survival To Music</h2>
 
             <div class="story-intro">
-              <strong>I’m Loai Miqdad, known as Hicats Sam / HS. I’m from Gaza City, Palestine, and I use music and visual storytelling to speak from my own experience.</strong>
+              <strong>I’m Loai Miqdad, known as Hicats Sam / HS. I’m a 23-year-old rapper, songwriter and visual storyteller from Gaza City, Palestine.</strong>
             </div>
 
             <div class="story-text">
-              <p>Before music became the main direction I wanted to follow, my background was in software and database development. I studied the field and worked as a developer, but music had always been something I loved.</p>
+              <p>Before music became the main direction I wanted to follow, my life was built around software and database development. I studied the field, graduated with a diploma, and worked as a developer. Music was always there, but before the war most of my passion was connected to Arabic singing and music.</p>
 
-              <p>Before the war, most of that passion was connected to Arabic music. I never expected that I would build a large part of my artistic identity through English rap. The turning point came during our first displacement, when I saw MC Abdul, a young rapper from Gaza, performing in English and speaking about Gaza.</p>
+              <div class="story-subhead">When music changed for me</div>
 
-              <p class="highlight-line">I remember thinking: I am living this story too. Why shouldn’t I be one of the people telling it myself?</p>
+              <p>The war changed the direction of my life. Our home was bombed, my family and I went through repeated displacement, and the things that once felt normal — a room, a laptop, electricity, internet, a place to work — became uncertain.</p>
 
-              <p>That is when English started becoming a bridge for me. I wanted people who could not understand Arabic to still hear directly from someone living through the war, displacement, fear and loss of home in Gaza.</p>
+              <p>We were displaced to a school because we hoped it would be safer. Instead, nights could mean darkness, bombing, artillery, gunfire and drones. When the situation around the school became too dangerous, we were forced to leave again. During displacement I saw injured people, smoke, tanks, destroyed streets and bodies on the ground. Those memories later became part of the world behind songs like <strong>Bad Story</strong>.</p>
 
-              <p>I started listening more seriously to NF, Eminem and Linkin Park. NF influenced me through storytelling and emotion. Eminem pushed me to study flow, rhyme, delivery and wordplay. Linkin Park showed me how pain, anger, vulnerability and energy can exist inside the same piece of music.</p>
+              <p>When we reached the south, we lived in tents. That period also became the emotional ground for songs I was already beginning to write: <strong>Homeless</strong>, <strong>Lost Mom</strong> and <strong>Bad Story</strong>.</p>
 
-              <p>I also taught myself English and performance through anything I could find: YouTube, podcasts, interviews, vlogs and music. I would repeat words, record myself, listen back and try again.</p>
+              <p class="highlight-line">I lost almost everything that made creating easy, but I did not stop planning for music.</p>
 
-              <p>The journey was never completely individual. Billy Salisbury from the UK has stood beside me through a lot of it, helping me with pronunciation, accent, flow, delivery, singing, writing and confidence. His support has been continuous, not just one lesson or one song.</p>
+              <div class="story-subhead">Why English rap</div>
 
-              <p>Garry Mc from The Kabin Studio in Ireland also helped me understand rap more practically. He wrote 16 bars for me as an exercise and stayed with me step by step until I could perform the full piece, working with me on rhythm, rhyme, entering the beat and finding the right flow.</p>
+              <p>During our first displacement I saw MC Abdul, a young rapper from Gaza, performing in English and speaking about Gaza. I remember thinking: I am living this story too. Why shouldn’t I be one of the people telling it myself?</p>
 
-              <p>In Gaza, Qism was my friend and producer. He gave me access to his studio, helped me record and produce, and gave me his time without asking me for money. More than that, he believed in my music and in where it could take me.</p>
+              <p>That moment pushed me to take English rap seriously. English did not replace my identity; it became a bridge. I wanted people who could not understand Arabic to still hear directly from someone living through fear, displacement, loss of home and the psychological pressure of war.</p>
 
-              <p>My family lost our home during the war. We went through repeated displacement and periods of living in tents, with unstable electricity, unstable internet and very limited equipment. Things that are basic for many artists can become part of the production problem here.</p>
+              <p>I started studying artists who made me think differently about storytelling and performance. NF influenced me through emotion and internal struggle. Eminem pushed me to study flow, rhyme, delivery and wordplay. Linkin Park showed me how anger, vulnerability and energy could exist in the same song.</p>
 
-              <p class="highlight-line">FEAR was the project where I learned how far I could go with what I had.</p>
+              <p>I taught myself through YouTube, podcasts, interviews, vlogs and music. I would repeat words, record myself, listen back and try again. Learning English without a normal environment for practice was difficult, but it became part of the work.</p>
 
-              <p>FEAR is my cover and reinterpretation of NF’s FEAR. I wanted to be clear about that from the beginning because I respect the original work. I connected with the song emotionally and built my own visual interpretation around fear, memory, pressure, isolation and what I was living through in Gaza.</p>
+              <div class="story-subhead">People who helped me grow</div>
 
-              <p>The project took around eight months to complete. The entire video was filmed on an iPhone 16 Pro Max with friends who believed in the vision. I did not have my own laptop to edit on, so I used a friend’s laptop after he finished his own work. Because I could not afford professional post-production, I taught myself editing while making the project: cutting scenes, working on color, pacing, reshooting and learning new techniques as I went.</p>
+              <p>I did not build this journey alone. Billy Salisbury from the UK helped me with pronunciation, accent, flow, delivery, singing, writing and confidence. His support has been consistent over time, not connected to only one song.</p>
 
-              <p>I lost Qism during the war only a few months before FEAR was officially released on 19 July 2026. I lost a close friend, but I also lost the person who had made music production possible for me when I could not afford normal studio costs.</p>
+              <p>Garry Mc from The Kabin Studio in Ireland helped me understand rap more practically. He wrote 16 bars for me as an exercise and stayed with me step by step until I could perform all 16, working with me on rhythm, rhyme, entering the beat and finding the right flow.</p>
 
-              <p>That is one of the biggest challenges now. I have ideas, lyrics and projects I want to make, but producing them became much harder after losing Qism.</p>
+              <p>In Gaza, Qism was my friend and producer. He gave me access to his studio, helped me record and produce, gave me his time without charging me, and believed in what I was trying to build. I also met Raji Al Jaru through this journey, another musician from Gaza, and we are now working together on new music.</p>
 
-              <p>I do not want to be seen only as “an artist from Gaza.” Gaza is a huge part of who I am, but I also want people to see the artist, the writing, the performance, the visual ideas and the ambition. I do not claim to speak for everyone in Gaza. I speak from my own experience.</p>
+              <div class="story-subhead">FEAR</div>
 
-              <p>The next step is my original project <strong>AFTER FEAR</strong>, currently built around four songs: <strong>Homeless</strong>, <strong>Lost Mom</strong>, <strong>Bad Story</strong> and <strong>Can You Hold Me</strong>, the last of which includes a collaboration with Rita Mousi.</p>
+              <p><strong>FEAR is my cover and reinterpretation of NF’s FEAR.</strong> I connected deeply with the original song, but I did not want to make a normal cover. I wanted to build a short music film around fear, memory, isolation, pressure and what war can do to the mind.</p>
 
-              <p>I am also working on a cover of Linkin Park’s <strong>In the End</strong> with Raji Al Jaru and Rita Mousi. We are changing parts of the approach so the performance connects more closely with our reality in Gaza instead of simply copying the original song.</p>
+              <p>The production took around eight months. The entire video was filmed on an iPhone 16 Pro Max with friends who believed in the idea. There was no production company, large crew or cinema setup behind it.</p>
+
+              <p>I did not have my own laptop while making FEAR. I used a friend’s laptop after he finished his own work. I could not afford professional editing, so the project became part film and part classroom: I learned by cutting, changing the pacing, working on color, reshooting scenes and teaching myself new techniques until the video felt right.</p>
+
+              <p class="highlight-line">FEAR taught me how far I could go with limited tools when the idea mattered enough.</p>
+
+              <p>I lost Qism during the war only a few months before FEAR was officially released on <strong>19 July 2026</strong>. That loss was personal, but it also changed the practical side of my music because I lost the friend who had helped make recording and production possible when I could not afford normal studio costs.</p>
+
+              <div class="story-subhead">What comes after FEAR</div>
+<p><strong>November 2026 update:</strong> I am developing <strong>STILL HUMAN</strong>, my first original cinematic rap album combining emotional English rap, orchestral sound and cinematic storytelling. It is not released yet; I am seeking producers, collaborators and production support. Since losing Qism — my close friend and the person who gave me access to a recording studio — as well as our home and my laptop, making music while living in a tent and struggling for power and internet has become a daily challenge. This album is about holding onto humanity and art through it all.</p>
+
+              <p>The biggest problem now is not ideas. I have songs, lyrics and visual concepts. The challenge is producing them.</p>
+
+              <p>My next original project is <strong>STILL HUMAN</strong>. It currently includes four songs: <strong>Homeless</strong>, about displacement and losing the feeling of home; <strong>Lost Mom</strong>, built from one of my biggest fears after our home was bombed — imagining what life would feel like if I lost my mother; <strong>Bad Story</strong>, based on a real period of displacement and survival; and <strong>Can You Hold Me</strong>, which includes a collaboration with Rita Mousi.</p>
+
+              <p>Separate from STILL HUMAN, I am also working on a cover of Linkin Park’s <strong>In the End</strong> with <strong>Raji Al Jaru</strong> and <strong>Rita Mousi</strong>. We are changing parts of the approach so the performance connects with our reality in Gaza while still respecting the original song.</p>
+
+              <div class="story-subhead">What I want people to see</div>
+
+              <p>I want my music to carry Gaza with it, but I do not want to be reduced to only “an artist from a war.” I want people to see the artist too — the writing, performance, visual ideas, ambition and the sound I am still building.</p>
+
+              <p>I do not speak for everyone in Gaza. I speak about what I lived through. If that helps someone outside Gaza see Palestinians as people with individual stories, dreams, ideas and creative lives, then the music has done something important.</p>
 
               <p class="highlight-line">For me, FEAR was not the end. It was the beginning of the artist I am still trying to become.</p>
 
@@ -783,15 +830,17 @@
       </section>
 
       <section class="section-card support-box" id="support">
-        <div class="section-kicker">Support the next record</div>
+        <div class="section-kicker">Support The Next Record</div>
 
-        <h2>I Have the Songs. The Challenge Is Producing Them.</h2>
+        <h2>Help Me Turn The Songs Into Finished Records</h2>
 
-        <p>After losing Qism, I also lost the friend and producer who helped me record and produce music without charging me.</p>
+        <p>I’m not asking for support only to “grow a career.” I already have songs, lyrics and ideas I am trying to finish from Gaza.</p>
 
-        <p>Your support helps me move AFTER FEAR and future projects from writing and demos into full production: recording, arrangement, mixing, mastering, artwork and distribution.</p>
+        <p>After losing Qism, I also lost the friend and producer who helped me record and produce without charging me. At the same time, daily life here can still make basic things like electricity, internet, equipment and a stable place to work difficult.</p>
 
-        <p class="strong-line">The ideas are already here. Your support helps me make them real.</p>
+        <p>Your support helps me record, arrange, mix, master and release STILL HUMAN and the projects that come after it. It helps give me the space and tools to keep creating when the production side is the hardest part.</p>
+
+        <p class="strong-line">The songs are already being written. The next step is making them real.</p>
 
         <div class="support-actions">
           <a class="support-btn" href="https://www.paypal.com/paypalme/sampal2003" target="_blank" rel="noopener">
