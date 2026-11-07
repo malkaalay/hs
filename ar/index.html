@@ -470,6 +470,25 @@
  .headline-grid{grid-template-columns:1fr;gap:9px}
  .headline-card{padding:17px}
 }
+
+/* Cinematic layered hero: keep the person in front of the lettering */
+.hero-full{isolation:isolate}
+.hero-scene{position:absolute;top:50%;left:50%;width:max(100%,177.7778svh);height:max(100%,56.25vw);aspect-ratio:16/9;transform:translate(-50%,-50%);z-index:0;overflow:hidden;pointer-events:none}
+.hero-scene-background,.hero-scene-foreground{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block}
+.hero-scene-background{filter:brightness(.83) contrast(1.1) saturate(.95)}
+.hero-name-behind{position:absolute;left:55.2%;top:43%;transform:translate(-50%,-50%);font-size:clamp(70px,10.8vw,172px);font-weight:900;letter-spacing:-.055em;white-space:nowrap;color:rgba(250,254,254,.56);text-shadow:0 4px 24px rgba(0,0,0,.21);z-index:1}
+.hero-scene-foreground{z-index:2;filter:brightness(.83) contrast(1.1) saturate(.95);clip-path:polygon(53.81% 30.56%, 52.44% 31.77%, 51.46% 38.72%, 50.59% 40.1%, 50.68% 42.19%, 50.39% 42.36%, 50.29% 43.4%, 49.51% 43.92%, 48.93% 45.14%, 47.95% 49.65%, 48.24% 67.88%, 48.44% 70.14%, 49.41% 71.7%, 49.32% 76.56%, 50% 77.08%, 50% 78.99%, 50.39% 80.73%, 50.1% 83.85%, 50.39% 84.2%, 50.49% 86.28%, 50.2% 88.19%, 50.88% 90.8%, 50.39% 92.36%, 50.49% 92.88%, 59.77% 92.88%, 59.96% 91.84%, 60.55% 91.15%, 59.77% 90.8%, 60.16% 78.47%, 60.55% 76.39%, 61.72% 75.17%, 61.72% 71.35%, 62.4% 69.62%, 62.6% 59.9%, 62.11% 55.03%, 62.01% 48.78%, 60.94% 44.79%, 60.64% 46.18%, 60.25% 45.14%, 59.67% 45.49%, 59.77% 42.88%, 59.18% 42.53%, 58.5% 40.8%, 58.59% 36.46%, 60.25% 35.94%, 60.45% 35.42%, 59.18% 33.16%, 58.2% 33.51%, 55.47% 30.9%)}
+.hero-overlay{z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.04) 42%,rgba(0,0,0,.25) 72%,rgba(0,0,0,.84) 100%)}
+.hero-content{z-index:3}
+.hero-content .song-title{display:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.fear-video-section{width:100%;scroll-margin-top:110px;padding:27px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(135deg,#171717,#060606);box-shadow:var(--shadow);text-align:center}
+.fear-video-heading{margin-bottom:18px}
+.fear-video-heading h2{font-size:clamp(32px,5vw,52px);line-height:1.05}
+.fear-video-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:17px;overflow:hidden}
+.fear-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.fear-video-external{display:inline-flex;gap:9px;margin-top:18px}
+@media(max-width:640px){.hero-scene{width:max(100%,177.7778svh);height:max(100%,56.25vw)}.hero-name-behind{font-size:clamp(67px,14vw,105px)}.fear-video-section{padding:14px}.fear-video-frame{border-radius:11px}}
 </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -492,13 +511,17 @@
     </header>
 
     <section class="hero-full" aria-label="هيكاتس سام — الموقع الرسمي">
-      <img class="hero-img" src="/images/hero-fear-bg.png" alt="Hicats Sam FEAR visual">
-      <div class="hero-overlay"></div>
+      <div class="hero-scene" aria-hidden="true">
+          <img class="hero-scene-background" src="/images/hero-fear-bg.png" alt="">
+          <div class="hero-name-behind">HICATS SAM</div>
+          <img class="hero-scene-foreground" src="/images/hero-fear-bg.png" alt="">
+        </div>
+        <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1 class="song-title">HICATS SAM</h1>
+        <h1 class="sr-only">HICATS SAM</h1>
         <p class="artist-name">رابر · كاتب أغانٍ</p>
         <nav class="support-actions hero-actions" aria-label="روابط أساسية">
-          <a class="support-btn" href="https://www.youtube.com/watch?v=bjHydvlQQec" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i> شاهد FEAR</a>
+          <a class="support-btn" href="#fear-video"><i class="fa-brands fa-youtube" aria-hidden="true"></i> شاهد FEAR</a>
           <a class="outline-btn" href="profile.html">قصتي</a>
           <a class="outline-btn" href="#support"><i class="fa-brands fa-paypal" aria-hidden="true"></i> الدعم عبر PayPal</a>
           <a class="outline-btn" href="#official-links">كل الروابط</a>
@@ -524,6 +547,17 @@
         <div class="artwork-frame">
           <img src="https://raw.githubusercontent.com/malkaalay/hs/main/images/fear-artwork.jpeg" alt="الغلاف الرسمي لأغنية FEAR للفنان هيكاتس سام">
         </div>
+      </section>
+
+      <section class="fear-video-section" id="fear-video" aria-label="فيلم FEAR الموسيقي">
+        <div class="fear-video-heading">
+          <span class="support-kicker">شاهد الفيلم</span>
+          <h2>FEAR</h2>
+        </div>
+        <div class="fear-video-frame">
+          <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/bjHydvlQQec?rel=0" title="FEAR — الفيلم الموسيقي لهيكاتس سام" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <a class="outline-btn fear-video-external" href="https://www.youtube.com/watch?v=bjHydvlQQec" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i> افتح الفيديو على يوتيوب</a>
       </section>
 
       <section class="music-card music-support-layout" aria-label="الاستماع إلى أغنية FEAR" id="track">
