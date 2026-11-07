@@ -634,6 +634,42 @@
   }
 }
   
+
+/* UX hardening — responsive, keyboard, contrast, and content rhythm */
+:root{--bg:#060a0c;--text:#f5f7f8;--muted:#b9c5c9;--line:rgba(202,235,237,.16)}
+html{scroll-padding-top:94px}
+body{background:radial-gradient(ellipse at 50% 0%,#10282d 0%,#070d10 44%,#040507 100%);color:var(--text)}
+a,button{touch-action:manipulation}
+a:focus-visible,button:focus-visible{outline:3px solid #a9e9ed;outline-offset:4px}
+a:not([href]),a[href="#"]{cursor:default}
+.content{gap:22px}
+.support-box p,.artwork-copy p,.story-text p{line-height:1.85}
+.support-box,.project-card,.music-link{border-color:var(--line)}
+.support-btn,.outline-btn,.music-link,.share-btn{transition:transform .18s ease,background-color .18s ease,border-color .18s ease;min-height:48px}
+.support-btn:hover,.outline-btn:hover,.music-link:hover{transform:translateY(-2px)}
+@media(max-width:640px){
+.header{padding:12px 14px}
+.brand h3{letter-spacing:.3px}
+.content{width:calc(100% - 28px)}
+.support-box,.artwork-showcase{padding:20px 17px}
+.social-grid{gap:10px}
+.music-link{min-height:70px;padding:15px 17px}
+.support-actions{gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* Profile page readable on small screens */
+@media(max-width:820px){
+.story-split,.hero-card{grid-template-columns:1fr}
+.story-copy{min-width:0}
+}
+@media(max-width:640px){
+.info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.story-text p{font-size:15px;line-height:1.9}
+}
 </style>
 </head>
 
@@ -828,7 +864,7 @@
         <p class="strong-line">الأغاني تُكتب بالفعل. الخطوة التالية هي تحويلها إلى أعمال حقيقية.</p>
 
         <div class="support-actions"><a class="outline-btn" href="https://www.patreon.com/hsrealmusic" target="_blank" rel="noopener noreferrer">Patreon — ادعم موسيقاي</a><a class="outline-btn" href="https://www.youtube.com/watch?v=bjHydvlQQec" target="_blank" rel="noopener noreferrer">شاهد FEAR على YouTube</a><a class="outline-btn" href="https://linktr.ee/hsrealmusic" target="_blank" rel="noopener noreferrer">PayPal وخيارات الدعم عبر Linktree</a>
-          <a class="support-btn" href="https://linktr.ee/hsrealmusic" target="_blank" rel="noopener">خيارات الدعم والروابط الرسمية</a>
+          
 
           <a class="outline-btn" href="https://chuffed.org/project/support-sam-in-gaza" target="_blank" rel="noopener">
             ادعم عبر Chuffed
@@ -851,15 +887,9 @@
         <span class="arrow">←</span>
       </a>
 
-      <a class="music-link" href="#">
-        <span>Spotify <small>قريبًا</small></span>
-        <span class="arrow">←</span>
-      </a>
+      
 
-      <a class="music-link" href="#">
-        <span>Apple Music <small>قريبًا</small></span>
-        <span class="arrow">←</span>
-      </a>
+      
     </section>
 
     <footer>© 2026 Hicats Sam / HS</footer>
