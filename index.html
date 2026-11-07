@@ -429,22 +429,13 @@
       .project-grid{grid-template-columns:1fr}
     }
   
-  /* FEAR / STILL HUMAN — midnight teal visual identity, Nov 2026 */
-  :root{--bg:#021318;--card:#071d22;--line:rgba(129,221,221,.16);--line-strong:rgba(129,221,221,.30);--text:#effafb;--muted:#9ab9bd;--soft:#c4dadd;--shadow:0 28px 85px rgba(0,5,8,.72)}
-  body{background:radial-gradient(ellipse at 50% 0%,#124851 0%,#041b21 38%,#01080b 100%)}
-  body::before{background:linear-gradient(180deg,rgba(14,86,94,.08),transparent 36%),radial-gradient(circle at center,transparent,rgba(0,7,10,.55) 87%)}
-  .header{background:rgba(1,16,21,.83);border-color:rgba(128,225,231,.14)}
-  .hero-full{background:#041c22}
-  .hero-img{filter:brightness(.64) contrast(1.12) saturate(.87);object-position:center 43%}
-  .hero-overlay{background:linear-gradient(180deg,rgba(0,30,36,.16),rgba(0,16,23,.20) 42%,rgba(0,7,11,.98) 98%),radial-gradient(ellipse at center,transparent 20%,rgba(0,7,11,.58) 82%)}
-  .label,.support-kicker,.section-kicker{color:#91d7da}
-  .support-btn,.main-btn{background:#9adfe2!important;color:#031a20!important}
-  .support-btn:hover,.main-btn:hover{background:#c0f3f2!important}
-  .outline-btn,.ghost-btn,.share-btn{border-color:rgba(117,214,220,.28)}
-  .artwork-showcase,.music-card,.support-box,.section-card,.project-card,.info-card,.music-link,.hero-card{background:linear-gradient(135deg,rgba(12,44,51,.96),rgba(3,15,20,.98));border-color:rgba(132,220,225,.16)}
-  .project-status,.release-status{border-color:rgba(146,218,221,.23);color:#b4dedf}
-  .music-link:hover{background:linear-gradient(135deg,#16464e,#071c22)}
-  @media(max-width:640px){.hero-img{object-position:50% 50%}}
+
+  /* Restore FEAR hero photography and original high-contrast cinematic treatment */
+  .hero-img{filter:brightness(.91) contrast(1.06) saturate(.95);transform:scale(1.01)}
+  .hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,10,13,.12) 38%,rgba(0,0,0,.74) 79%,rgba(0,0,0,.95) 100%)}
+  .hero-content{text-shadow:0 3px 18px rgba(0,0,0,.9)}
+  .hero-copy{color:#f4f4f4;text-shadow:0 3px 14px #000,0 10px 30px #000}
+  @media(max-width:640px){.hero-img{object-position:50% 45%}}
 </style>
 </head>
 
@@ -466,7 +457,7 @@
     </header>
 
     <section class="hero-full" aria-label="Hicats Sam official artist website">
-      <img class="hero-img" src="https://raw.githubusercontent.com/malkaalay/hs/main/images/hero-fear-bg.png" alt="Hicats Sam cinematic hero">
+      <img class="hero-img" src="/images/hero-fear-bg.png" alt="Hicats Sam cinematic hero">
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
@@ -571,7 +562,7 @@
 
         <div class="support-actions">
           <a class="support-btn" href="https://chuffed.org/project/support-sam-in-gaza" target="_blank" rel="noopener">Donate and Support</a>
-          <a class="outline-btn" href="https://www.paypal.com/paypalme/sampal2003" target="_blank" rel="noopener">Donate via PayPal</a>
+          <a class="outline-btn" href="https://linktr.ee/hsrealmusic" target="_blank" rel="noopener">Support options and official links</a>
           <button class="outline-btn" type="button" onclick="sharePage()">Share the Story</button>
         </div>
       </section>
