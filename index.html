@@ -436,7 +436,40 @@
   .hero-content{text-shadow:0 3px 18px rgba(0,0,0,.9)}
   .hero-copy{color:#f4f4f4;text-shadow:0 3px 14px #000,0 10px 30px #000}
   @media(max-width:640px){.hero-img{object-position:50% 45%}}
+
+/* Minimal cinematic FEAR hero, readable foreground and direct platform links */
+.hero-full{min-height:100svh;align-items:stretch}
+.hero-img{object-position:50% 47%;filter:brightness(.83) contrast(1.1) saturate(.95)}
+.hero-overlay{background:linear-gradient(180deg,rgba(0,6,9,.13),rgba(0,6,9,.10) 42%,rgba(0,0,0,.81) 90%,#000 100%)}
+.hero-full::before{content:none}
+.hero-content{width:100%;max-width:1100px;min-height:100svh;padding:130px 20px 84px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.hero-content .song-title{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);width:max-content;max-width:98%;font-size:clamp(47px,10.8vw,158px);line-height:.9;letter-spacing:-.055em;color:rgba(245,251,251,.46);text-shadow:0 6px 32px rgba(0,0,0,.2);pointer-events:none}
+.hero-content .artist-name{font-size:clamp(17px,2vw,25px);font-weight:650;color:#f1f5f5;margin:0 0 18px;text-shadow:0 2px 14px #000}
+.hero-actions{margin:0;gap:10px;max-width:850px}
+.hero-actions a{min-height:48px;padding:12px 18px;gap:9px;font-size:13px}
+.hero-actions a i{font-size:17px}
+.headline-grid{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.headline-card{display:flex;flex-direction:column;gap:7px;align-items:center;text-align:center;padding:23px 14px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(145deg,#161616,#070707);text-decoration:none;transition:transform .2s,border-color .2s}
+.headline-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.3)}
+.headline-card strong{font-size:18px;color:#f4f7f7}
+.headline-card span{font-size:12px;color:#aeb6b7}
+.social-grid{scroll-margin-top:110px}
+.social-grid .music-link{justify-content:flex-start}
+.social-grid .music-link i{width:34px;font-size:23px;flex-shrink:0;text-align:center}
+.social-grid .music-link span:not(.arrow){flex:1}
+.social-grid .music-link strong{font-size:15px}
+.social-grid .music-link small{margin-top:5px}
+@media(max-width:640px){
+ .hero-content{padding:100px 16px 58px}
+ .hero-content .song-title{top:39%;font-size:clamp(43px,11vw,77px);letter-spacing:-.05em}
+ .hero-img{object-position:50% 45%}
+ .hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}
+ .hero-actions a{width:100%;padding:12px 8px;font-size:12px}
+ .headline-grid{grid-template-columns:1fr;gap:9px}
+ .headline-card{padding:17px}
+}
 </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -456,34 +489,32 @@
       </div>
     </header>
 
-    <section class="hero-full" aria-label="Hicats Sam official artist website">
-      <img class="hero-img" src="/images/hero-fear-bg.png" alt="Hicats Sam cinematic hero">
+    <section class="hero-full" aria-label="Hicats Sam — official artist website">
+      <img class="hero-img" src="/images/hero-fear-bg.png" alt="Hicats Sam FEAR visual">
       <div class="hero-overlay"></div>
-
       <div class="hero-content">
-        <div class="label">Gaza City, Palestine</div>
         <h1 class="song-title">HICATS SAM</h1>
-        <div class="artist-name">Rapper · Songwriter · Visual Storyteller <span>HS</span></div>
-        <p class="hero-copy">From FEAR to STILL HUMAN — my first original cinematic rap album, blending emotional English rap, epic sound and stories of loss, survival and remaining human.</p>
-
-        <div class="support-actions">
-          <a class="support-btn" href="#track">Listen to FEAR</a>
+        <p class="artist-name">Rapper · Songwriter</p>
+        <nav class="support-actions hero-actions" aria-label="Primary links">
+          <a class="support-btn" href="https://www.youtube.com/watch?v=bjHydvlQQec" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i> Watch FEAR</a>
           <a class="outline-btn" href="profile.html">My Story</a>
-          <a class="outline-btn" href="#still-human">STILL HUMAN</a>
-        </div>
-
-        <a class="scroll-btn" href="#track">Explore the music</a>
+          <a class="outline-btn" href="#support"><i class="fa-brands fa-paypal" aria-hidden="true"></i> Support via PayPal</a>
+          <a class="outline-btn" href="#official-links">All Links</a>
+        </nav>
       </div>
     </section>
 
     <section class="content" id="main-content">
+<section class="headline-grid" aria-label="Featured chapters">
+      <a href="#track" class="headline-card"><strong>FEAR</strong><span>Music Film</span></a>
+      <a href="#still-human" class="headline-card"><strong>STILL HUMAN</strong><span>Upcoming Project</span></a>
+      <a href="profile.html" class="headline-card"><strong>MY STORY</strong><span>From Gaza to the Mic</span></a>
+    </section>
       <section class="artwork-showcase">
         <div class="artwork-copy">
           <div class="support-kicker">Chapter One</div>
           <h2>FEAR</h2>
-          <p>
-            FEAR is my cover and reinterpretation of NF’s FEAR. I connected with the song during one of the hardest periods of my life and built my own visual story around it from what I was living through in Gaza. The project took around eight months to complete, and the entire video was filmed on an iPhone 16 Pro Max with friends who believed in the vision.
-          </p>
+          <p>A cinematic reinterpretation of NF’s song, filmed and directed in Gaza.</p>
           <div class="release-status" style="margin-top:18px">Official release · 19 July 2026</div>
 <div class="support-actions" aria-label="FEAR film links"><a class="support-btn" href="https://www.youtube.com/watch?v=bjHydvlQQec" target="_blank" rel="noopener noreferrer">Watch FEAR on YouTube</a><a class="outline-btn" href="https://hsrealmusic.bandcamp.com/track/fear" target="_blank" rel="noopener noreferrer">Listen on Bandcamp</a></div>
         </div>
@@ -511,36 +542,10 @@
         </div>
       </section>
 
-      <section class="support-box project-section" id="still-human" aria-label="STILL HUMAN original project">
+      <section class="support-box project-section" id="still-human" aria-label="STILL HUMAN">
         <div class="support-kicker">Next Chapter</div>
-        <h2>STILL HUMAN</h2><p><strong>My first original cinematic rap album is in development, combining English rap, orchestral production and visual storytelling. It has not been released yet.</strong></p>
-        <p>FEAR introduced one part of my story, but it was a cover. STILL HUMAN is the next step: my original songs, my writing, and experiences that came directly from what I lived through in Gaza.</p>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Homeless</h3>
-            <p>Displacement, losing the feeling of home, living in tents, and holding on to the idea that one day life can be rebuilt.</p>
-            <span class="project-status">In development</span>
-          </article>
-
-          <article class="project-card">
-            <h3>Lost Mom</h3>
-            <p>A song built from the fear of losing my mother after our home was bombed. It is an imagined loss, not a literal account of her death.</p>
-            <span class="project-status">In development</span>
-          </article>
-
-          <article class="project-card">
-            <h3>Bad Story</h3>
-            <p>Based on a real period of displacement in a shelter school: darkness, bombing, evacuation, separation and survival.</p>
-            <span class="project-status">In development</span>
-          </article>
-
-          <article class="project-card">
-            <h3>Can You Hold Me</h3>
-            <p>Another emotional side of STILL HUMAN, including a collaboration with Rita Mousi.</p>
-            <span class="project-status">In development</span>
-          </article>
-        </div>
+        <h2>STILL HUMAN</h2>
+        <p>My upcoming original cinematic rap project. In development.</p>
       </section>
 
       <section class="support-box project-section" aria-label="In the End cover project">
@@ -550,7 +555,7 @@
         <span class="project-status">Cover · Collaboration · In production</span>
       </section>
 
-      <section class="support-box project-section" id="current-chapter"><div class="support-kicker">My story today · November 2026</div><h2>Still here. Still making music.</h2><p>My name is Loai Miqdad, and I create as Hicats Sam, a rapper, songwriter and filmmaker from Gaza City. My family home was destroyed. After repeated displacement, we now live in a tent. I lost my close friend Qism, the person who opened his studio to me and helped me record and produce without charging me. Losing him meant losing a friend and a place where my music could take shape.</p><p>I also lost my laptop and sometimes walk about an hour to reach power and an internet connection. I made FEAR over eight months under these conditions: a music film about memories of war that refuse to leave. Now I am developing STILL HUMAN, my first original cinematic rap album, and seeking producers, creative collaborators and the resources to finish recording it.</p><p>I want to be seen as an artist, not only as someone living through a war. If you cannot donate, sharing my work or connecting me with musicians and producers matters too.</p><div class="support-actions"><a class="outline-btn" href="https://linktr.ee/hsrealmusic" target="_blank" rel="noopener noreferrer">All My Official Links</a><a class="outline-btn" href="https://www.youtube.com/watch?v=bjHydvlQQec" target="_blank" rel="noopener noreferrer">Watch FEAR Film</a></div></section>
+      
 
       <section class="support-box" aria-label="Support the next record" id="support" data-nosnippet>
         <div class="support-kicker" data-nosnippet>Support The Next Record</div>
@@ -563,33 +568,20 @@
 
         <div class="support-actions">
           <a class="support-btn" href="https://chuffed.org/project/support-sam-in-gaza" target="_blank" rel="noopener">Donate and Support</a>
-<a class="outline-btn" href="https://www.patreon.com/hsrealmusic" target="_blank" rel="noopener noreferrer">Support on Patreon</a><a class="outline-btn" href="https://linktr.ee/hsrealmusic" target="_blank" rel="noopener noreferrer">PayPal &amp; other support links</a>
+<a class="outline-btn" href="https://www.patreon.com/hsrealmusic" target="_blank" rel="noopener noreferrer">Support on Patreon</a><a class="outline-btn" href="https://linktr.ee/hsrealmusic" target="_blank" rel="noopener noreferrer">PayPal via Official Links</a>
           <a class="outline-btn" href="https://linktr.ee/hsrealmusic" target="_blank" rel="noopener">Support options and official links</a>
           <button class="outline-btn" type="button" onclick="sharePage()">Share the Story</button>
         </div>
       </section>
 
-      <div class="social-grid" aria-label="Social and music links">
-<a class="music-link" href="https://www.youtube.com/watch?v=bjHydvlQQec" target="_blank" rel="noopener noreferrer"><span>YouTube — FEAR <small>Watch the music film</small></span><span class="arrow">→</span></a><a class="music-link" href="https://www.patreon.com/hsrealmusic" target="_blank" rel="noopener noreferrer"><span>Patreon <small>Support ongoing music production</small></span><span class="arrow">→</span></a>
-        <a class="music-link" href="https://www.instagram.com/hsrealmusic?igsh=cXA3dmszcm4ybGd4" target="_blank" rel="noopener">
-          <span>Instagram <small>Follow the journey</small></span>
-          <span class="arrow">→</span>
-        </a>
-
-        <a class="music-link" href="https://www.tiktok.com/@hsrealmusic?_r=1&_t=ZS-9653AmsCTu4" target="_blank" rel="noopener">
-          <span>TikTok <small>Watch new updates</small></span>
-          <span class="arrow">→</span>
-        </a>
-
-        <a class="music-link" href="https://hsrealmusic.bandcamp.com/track/fear" target="_blank" rel="noopener">
-          <span>Bandcamp <small>Listen and support directly</small></span>
-          <span class="arrow">→</span>
-        </a>
-
-        <a class="music-link" href="#track">
-          <span>Spotify / Apple Music <small>Coming soon</small></span>
-          <span class="arrow">→</span>
-        </a>
+      <div class="social-grid" id="official-links" aria-label="Official artist links">
+        <a class="music-link" href="https://www.youtube.com/watch?v=bjHydvlQQec" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i><span><strong>YouTube</strong><small>FEAR Music Film</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="music-link" href="https://www.patreon.com/hsrealmusic" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-patreon" aria-hidden="true"></i><span><strong>Patreon</strong><small>Support the Journey</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="music-link" href="https://linktr.ee/hsrealmusic" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-paypal" aria-hidden="true"></i><span><strong>PayPal</strong><small>PayPal via Linktree</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="music-link" href="https://www.instagram.com/hsrealmusic" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span><strong>Instagram</strong><small>Follow the Journey</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="music-link" href="https://www.tiktok.com/@hsrealmusic" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok" aria-hidden="true"></i><span><strong>TikTok</strong><small>Short Updates</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="music-link" href="https://hsrealmusic.bandcamp.com/track/fear" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-bandcamp" aria-hidden="true"></i><span><strong>Bandcamp</strong><small>Listen to FEAR</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="music-link" href="https://linktr.ee/hsrealmusic" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-link" aria-hidden="true"></i><span><strong>Linktree</strong><small>All Official Links</small></span><span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </section>
 
